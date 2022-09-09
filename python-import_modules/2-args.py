@@ -8,5 +8,6 @@ if __name__ == "__main__":
     print(f"{len(argv)} arguments:".format())
 
     for args in sys.argv:
+        if i != 0:
+            print(f"{i}: {args}".format())
         i += 1
-        print(f"{i}: {args}".format())

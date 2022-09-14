@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from hashlib import new
-
-
 def divisible_by_2(my_list=[]):
     new_list = [None] * len(my_list)
     idx = 0

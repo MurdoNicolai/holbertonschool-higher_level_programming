@@ -5,5 +5,5 @@ def multiple_returns(sentence):
     if length != 0:
         firstchar = sentence[0]
     else:
-        return None
+        return 0, None
     return length, firstchar

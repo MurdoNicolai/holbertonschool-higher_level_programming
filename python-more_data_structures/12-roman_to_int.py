@@ -2,10 +2,12 @@
 def roman_to_int(roman_string):
     dict_nums = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
                  'C': 100, 'D': 500, 'M': 1000}
-    roman_list = list(roman_string)
     result = 0
-    if not roman_string:
+    if roman_string == None:
         return 0
+    if not isinstance(roman_string, str):
+        return 0
+    roman_list = list(roman_string)
     for idx in range(len(roman_list) - 1):
         if roman_list[idx] not in dict_nums.keys():
             return 0

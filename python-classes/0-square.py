@@ -2,6 +2,8 @@
 """
     Simplest classs création
 """
+
+
 class Square:
     """
     Defines a géometrical square.

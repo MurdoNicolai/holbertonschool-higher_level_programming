@@ -1,3 +1,6 @@
+"""contains a simple addition function to practice making test files
+        """
+
 #!/usr/bin/python3
 def add_integer(a, b=98):
     """adds together to numbers (float or int):

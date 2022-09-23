@@ -2,6 +2,7 @@
 """ another testing ground but with slightly more complex function:
     matirx devision """
 
+
 def matrix_divided(matrix, div):
     """ devides all numbers in a matrix by a number:
         matrix: matrix to devide
@@ -11,7 +12,7 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if (type(matrix) is not list or (len(matrix) == 0) or
-        type(matrix[0]) is not list or (len(matrix[0]) == 0)):
+            type(matrix[0]) is not list or (len(matrix[0]) == 0)):
         raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
     for row in matrix:

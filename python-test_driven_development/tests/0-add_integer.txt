@@ -2,25 +2,26 @@
 >>> import importlib
 >>> toTest = importlib.import_module('0-add_integer')
 
->>> toTest.add_integer(1,2)
+>>> print(toTest.add_integer(1,2))
 3
->>> toTest.add_integer(1,-5)
+>>> print(toTest.add_integer(1,-5))
 -4
->>> toTest.add_integer(1,None)
+>>> print(toTest.add_integer(1,None))
 Traceback (most recent call last):
 TypeError: b must be an integer
 
->>> toTest.add_integer("abe",4)
+>>> print(toTest.add_integer("abe",4))
 Traceback (most recent call last):
 TypeError: a must be an integer
 
 
->>> toTest.add_integer(3,4.45)
+>>> print(toTest.add_integer(3,4.45))
 7
 
->>> toTest.add_integer(float('inf'),4.45)
+>>> print(toTest.add_integer(float('inf'),4.45))
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
 
->>> toTest.add_integer(3,float(NAN))
+>>> print(toTest.add_integer(3,float('NAN')))
 Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer

@@ -1,0 +1,21 @@
+>>> import importlib
+>>> toTest = importlib.import_module('5-text_indentation')
+
+>>> toTest.text_indentation("here:is a... test?")
+here:
+<BLANKLINE>
+is a.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+test?
+<BLANKLINE>
+>>> toTest.text_indentation(5)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> toTest.text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'

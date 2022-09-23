@@ -1,0 +1,15 @@
+
+>>> import importlib
+>>> toTest = importlib.import_module('3-say_my_name')
+
+>>> toTest.say_my_name("jon", "mayer")
+My name is jon mayer
+
+
+>>> toTest.say_my_name("jon", 245)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> toTest.say_my_name(34, 354)
+Traceback (most recent call last):
+TypeError: first_name must be a string

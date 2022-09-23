@@ -17,3 +17,7 @@ TypeError: a must be an integer
 
 >>> toTest.add_integer(3,4.45)
 7
+
+>>> toTest.add_integer(float('inf'),4.45)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer

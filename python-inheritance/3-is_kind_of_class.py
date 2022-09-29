@@ -8,5 +8,4 @@ def is_kind_of_class(obj, a_class):
         obj: object to test
         a_class: the class it should inherit frome or be
         return: true or false"""
-    return (isinstance(obj) is a_class)
-
+    return (isinstance(obj, a_class))

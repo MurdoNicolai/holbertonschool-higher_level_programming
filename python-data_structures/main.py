@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-element_at = __import__('1-element_at').element_at
+print_reversed_list_integer = __import__('3-print_reversed_list_integer').print_reversed_list_integer
 
-list = [1]
-idx = 1
-print("Element at index {:d} is {}".format(idx, element_at(list, idx)))
+list = None
+print_reversed_list_integer(list)

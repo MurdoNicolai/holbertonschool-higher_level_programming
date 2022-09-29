@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-a = (1,2)
-print(type(a))
+magic_string = __import__('100-magic_string').magic_string
+
+for i in range(10):
+    print(magic_string())

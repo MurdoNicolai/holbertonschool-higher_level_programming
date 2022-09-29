@@ -12,7 +12,7 @@ is a.
 <BLANKLINE>
 test?
 <BLANKLINE>
->>> toTest.text_indentation(5)
+>>> toTest.text_indentation(576)
 Traceback (most recent call last):
 TypeError: text must be a string
 

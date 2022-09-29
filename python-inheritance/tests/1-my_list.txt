@@ -14,3 +14,10 @@
 [1, 2, 3, 4, 5]
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+>>> my_list.append(-2)
+>>> my_list.print_sorted()
+[-2, 1, 2, 3, 4, 5]
+>>> new_list = toTest.MyList()
+>>> new_list.print_sorted()
+[]

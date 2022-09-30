@@ -9,7 +9,7 @@ def pascal_triangle(n):
     pascallist = list()
     for i in range(1, n + 1):
         line = list()
-        for j in range (0, i):
+        for j in range(0, i):
             if j == 0 or j == i - 1:
                 line.append(1)
             else:

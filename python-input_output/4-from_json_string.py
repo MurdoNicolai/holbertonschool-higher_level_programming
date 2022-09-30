@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """has function that returns the object frome JSON representation"""
 import json
 

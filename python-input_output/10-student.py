@@ -17,7 +17,9 @@ class Student():
     def to_json(self, attrs=None):
         if isinstance(attrs, list):
             newdict = {}
-            for key in list:
-                newdict.update((key, self.__dict__.get(key)))
+            for key in attrs:
+                if self.__dict__.get(key):
+                    newdict[key] = self.__dict__.get(key)
+            return newdict
         else:
             return self.__dict__

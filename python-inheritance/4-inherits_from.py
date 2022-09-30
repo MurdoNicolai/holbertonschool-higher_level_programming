@@ -8,4 +8,4 @@ def inherits_from(obj, a_class):
         obj: object to test
         a_class: the class it should inherit frome or be
         return: true or false"""
-    return (isinstance(obj, a_class) or type(obj) is a_class)
+    return (isinstance(obj, a_class) and not type(obj) is a_class)

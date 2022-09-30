@@ -3,7 +3,7 @@
     or inherits forme that class directly or not"""
 
 
-def def inherits_from(obj, a_class):
+def inherits_from(obj, a_class):
     """test if object is inheritant of a certain classdirectly or not:
         obj: object to test
         a_class: the class it should inherit frome or be

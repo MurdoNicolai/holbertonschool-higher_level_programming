@@ -9,4 +9,4 @@ def load_from_json_file(filename):
         filename (sting): file to read to
     """
     with open(filename, "r") as filename:
-        json.load(my_obj, filename)
+        return json.load(filename)

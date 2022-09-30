@@ -22,7 +22,7 @@ class Rectangle(BaseGeometry):
     width (int): width of rectangle
     """
     def __init__(self, width, height):
-        BaseGeometry.integer_validator(BaseGeometry, self.__width, width)
-        BaseGeometry.integer_validator(BaseGeometry, self.__height, height)
+        BaseGeometry.integer_validator(BaseGeometry, "__width", width)
+        BaseGeometry.integer_validator(BaseGeometry, "__height", height)
         self.__width = width
         self.__height = height

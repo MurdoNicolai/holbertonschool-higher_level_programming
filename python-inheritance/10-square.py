@@ -10,6 +10,6 @@ class Square(Rectangle):
     size (int): hight and width of square
     """
     def __init__(self, size):
-        super().BaseGeometry.integer_validator(super().BaseGeometry, "size", size)
+        super().integer_validator("size", size)
         super().__init__(size, size)
         self.__size = self._Rectangle__width

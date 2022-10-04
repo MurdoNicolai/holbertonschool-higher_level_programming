@@ -15,6 +15,15 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
+        for attribute in (width, height, x, y):
+            if attribute is not int:
+                raise TypeError(f"{attribute} must be an integer")
+        for attribute in (width, height):
+            if attribute <= 0:
+                raise ValueError(f"{attribute} must be > 0")
+        for attribute in (x, y):
+            if attribute < 0:
+                raise ValueError(f"{attribute} must be >= 0")
         self.__width = width
         self.__height = height
         self.__x = x

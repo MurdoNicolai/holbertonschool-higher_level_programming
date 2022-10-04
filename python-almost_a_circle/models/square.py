@@ -45,3 +45,9 @@ class Square(Rectangle):
                 self.y = kwargs['y']
             except KeyError:
                 pass
+
+    def to_dictionary(self):
+        """ return the dictionary version of the rectangle"""
+        self.dict = {'x': self.x, 'y': self.y, 'id': self.id,
+                     'size': self.size}
+        return self.dict

@@ -17,3 +17,31 @@ class Square(Rectangle):
         return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
 
     size = Rectangle.width
+
+    def update(self, *args, **kwargs):
+        """alows update of the rectangle arg order: id, width, height x, y"""
+        if len(args) > 0:
+            super(Rectangle, self).__init__(args[0])
+            if len(args) > 1:
+                self.size = args[1]
+                if len(args) > 2:
+                    self.x = args[2]
+                    if len(args) > 3:
+                        self.y = args[3]
+        else:
+            try:
+                super(Rectangle, self).__init__(kwargs['id'])
+            except KeyError:
+                pass
+            try:
+                self.width = kwargs['size']
+            except KeyError:
+                pass
+            try:
+                self.x = kwargs['x']
+            except KeyError:
+                pass
+            try:
+                self.y = kwargs['y']
+            except KeyError:
+                pass

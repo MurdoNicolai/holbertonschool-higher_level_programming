@@ -20,27 +20,35 @@ class rectangle(Base):
         __y = y
 
     def get_width(self):
+        """width getter"""
         return self.__width
 
     def set_width(self, width):
+        """width setter"""
         self.__width = width
 
     def get_height(self):
+        """height getter"""
         return self.__height
 
     def set_height(self, height):
+        """height setter"""
         self.__height = height
 
     def get_x(self):
+        """x getter"""
         return self.__x
 
     def set_x(self, x):
+        """x setter"""
         self.__x = x
 
     def get_y(self):
+        """Y getter"""
         return self.__y
 
     def set_y(self, y):
+        """Y setter"""
         self.__y = y
 
     property(fget=get_width, fset=set_width)

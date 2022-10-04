@@ -126,6 +126,7 @@ class Rectangle(Base):
                 pass
 
     def to_dictionary(self):
+        """ return the dictionary version of the rectangle"""
         self.dict = {'x': self.x, 'y': self.y, 'id': self.id,
                      'height': self.height, 'width': self.width}
         return self.dict

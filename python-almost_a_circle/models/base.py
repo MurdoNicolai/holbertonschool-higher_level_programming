@@ -19,4 +19,5 @@ class Base:
             self.id = id
 
     def to_json_string(list_dictionaries):
+        """ converts dict to json string"""
         return json.dumps(list_dictionaries)

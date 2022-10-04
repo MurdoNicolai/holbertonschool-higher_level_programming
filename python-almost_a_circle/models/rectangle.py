@@ -75,6 +75,7 @@ class Rectangle(Base):
     y = property(fget=get_y, fset=set_y)
 
     def area(self):
+        """ return area of rectangle"""
         return self.width * self.height
 
 

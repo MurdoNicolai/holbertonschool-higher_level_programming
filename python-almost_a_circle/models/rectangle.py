@@ -51,7 +51,7 @@ class Rectangle(Base):
         """Y setter"""
         self.__y = y
 
-    property(fget=get_width, fset=set_width)
-    property(fget=get_height, fset=set_height)
-    property(fget=get_x, fset=set_x)
-    property(fget=get_y, fset=set_y)
+    width = property(fget=get_width, fset=set_width)
+    height = property(fget=get_height, fset=set_height)
+    x = property(fget=get_x, fset=set_x)
+    y = property(fget=get_y, fset=set_y)

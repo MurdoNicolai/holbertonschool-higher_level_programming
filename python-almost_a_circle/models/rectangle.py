@@ -89,8 +89,8 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y}"
-                + f" - {self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y}" +
+                f" - {self.width}/{self.height}")
 
     def update(self, *args):
         """alows update of the rectangle arg order: id, width, height x, y"""

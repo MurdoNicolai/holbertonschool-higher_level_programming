@@ -2,6 +2,9 @@
 """ contains the Base class """
 
 
+import json
+
+
 class Base:
     """ Serves as Base for the other classes of the project:
         id (int): is diffrent for each object."""
@@ -14,3 +17,6 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    def to_json_string(list_dictionaries):
+        return json.dumps(list_dictionaries)

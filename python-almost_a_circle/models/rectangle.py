@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """containse the rectangle class"""
 
-
+from inspect import trace
 from models.base import Base
 
 
@@ -92,15 +92,36 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y}" +
                 f" - {self.width}/{self.height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """alows update of the rectangle arg order: id, width, height x, y"""
         if len(args) > 0:
             super().__init__(args[0])
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.height = args[2]
-        if len(args) > 3:
-            self.x = args[3]
-        if len(args) > 4:
-            self.y = args[4]
+            if len(args) > 1:
+                self.width = args[1]
+                if len(args) > 2:
+                    self.height = args[2]
+                    if len(args) > 3:
+                        self.x = args[3]
+                        if len(args) > 4:
+                            self.y = args[4]
+        else:
+            try:
+                super().__init__(kwargs['id'])
+            except KeyError:
+                pass
+            try:
+                self.width = kwargs['width']
+            except KeyError:
+                pass
+            try:
+                self.height = kwargs['height']
+            except KeyError:
+                pass
+            try:
+                self.x = kwargs['x']
+            except KeyError:
+                pass
+            try:
+                self.y = kwargs['y']
+            except KeyError:
+                pass

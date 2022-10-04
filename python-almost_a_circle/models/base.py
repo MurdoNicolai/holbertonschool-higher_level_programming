@@ -3,7 +3,6 @@
 
 
 import json
-from queue import Empty
 
 
 class Base:
@@ -25,3 +24,12 @@ class Base:
         if list_dictionaries is None or list_dictionaries == {}:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        json_string = ""
+        for instance in list_objs:
+            json_string += instance.to_json_string(instance.to_dictionary())
+        filename = f"{list_objs[0].__class__.__name__}.json"
+        with open(filename, "w") as filename:
+            filename.write(json_string)

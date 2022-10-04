@@ -4,7 +4,7 @@
 
 from models.base import Base
 
-class rectangle(Base):
+class Rectangle(Base):
     """Defines a rectangle:
         __width (int): width of rectangle
         __hight (int): hight of rectangle

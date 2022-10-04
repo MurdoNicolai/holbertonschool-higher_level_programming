@@ -78,6 +78,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
+        """displays rectangle"""
         for i in range(self.y):
             print()
         for i in range(self.height):
@@ -92,6 +93,7 @@ class Rectangle(Base):
                 + f" - {self.width}/{self.height}")
 
     def update(self, *args):
+        """alows update of the rectangle arg order: id, width, height x, y"""
         if len(args) > 0:
             super().__init__(args[0])
         if len(args) > 1:

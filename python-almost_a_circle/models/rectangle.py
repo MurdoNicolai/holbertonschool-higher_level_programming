@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Defines a rectangle:
         __width (int): width of rectangle
@@ -25,6 +26,10 @@ class Rectangle(Base):
 
     def set_width(self, width):
         """width setter"""
+        if width is not int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
 
     def get_height(self):
@@ -33,6 +38,10 @@ class Rectangle(Base):
 
     def set_height(self, height):
         """height setter"""
+        if height is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     def get_x(self):
@@ -41,6 +50,10 @@ class Rectangle(Base):
 
     def set_x(self, x):
         """x setter"""
+        if x is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     def get_y(self):
@@ -49,6 +62,10 @@ class Rectangle(Base):
 
     def set_y(self, y):
         """Y setter"""
+        if y is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
 
     width = property(fget=get_width, fset=set_width)

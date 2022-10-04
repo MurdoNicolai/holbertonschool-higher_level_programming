@@ -30,6 +30,8 @@ class Base:
         json_string = ""
         for instance in list_objs:
             json_string += instance.to_json_string(instance.to_dictionary())
+            if instance is not list_objs[len(list_objs) - 1]:
+                json_string += ", "
         filename = f"{list_objs[0].__class__.__name__}.json"
         with open(filename, "w") as filename:
-            filename.write(json_string)
+            filename.write(f"[{json_string}]")

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """containse the rectangle class"""
 
-from inspect import trace
 from models.base import Base
 
 
@@ -9,8 +8,8 @@ class Rectangle(Base):
     """Defines a rectangle:
         __width (int): width of rectangle
         __hight (int): hight of rectangle
-        __x (int):
-        __y (int):
+        __x (int): x postition on square
+        __y (int): y postition on square
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):

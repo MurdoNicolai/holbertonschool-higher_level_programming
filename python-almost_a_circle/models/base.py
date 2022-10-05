@@ -61,8 +61,11 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ loads the list of the JSON string representation: json_string"""
-        with open(cls.__name__ + ".json", "r") as filename:
-            newlist = cls.from_json_string(filename.read())
+        try:
+            with open(cls.__name__ + ".json", "r") as filename:
+                newlist = cls.from_json_string(filename.read())
+        except FileNotFoundError:
+            newlist = list()
         instance_list = list()
         for dict in newlist:
             instance_list.append(cls.create(**dict))

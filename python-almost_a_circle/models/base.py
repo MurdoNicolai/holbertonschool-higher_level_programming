@@ -30,11 +30,13 @@ class Base:
         """ converts list of object to json string saved in file with the name
             of the class of conveted objects (class must be subclass of base"""
         json_string = ""
+        if list_objs is None:
+            list_objs = list()
         for instance in list_objs:
             json_string += instance.to_json_string(instance.to_dictionary())
             if instance is not list_objs[len(list_objs) - 1]:
                 json_string += ", "
-        filename = f"{list_objs[0].__class__.__name__}.json"
+        filename = f"{cls.__name__}.json"
         with open(filename, "w") as filename:
             filename.write(f"[{json_string}]")
 

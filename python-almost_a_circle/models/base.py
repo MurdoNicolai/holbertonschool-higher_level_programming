@@ -51,7 +51,19 @@ class Base:
     def create(cls, **dictionary):
         """ creates a new instance of the class with
             all attributes from the dictionary."""
-
-        new = cls(1, 1)
+        try:
+            new = cls(1)
+        except TypeError:
+            new = cls(1, 1)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ loads the list of the JSON string representation: json_string"""
+        with open(cls.__name__ + ".json", "r") as filename:
+            newlist = cls.from_json_string(filename.read())
+        instance_list = list()
+        for dict in newlist:
+            instance_list.append(cls.create(**dict))
+        return instance_list

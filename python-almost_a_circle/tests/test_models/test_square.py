@@ -41,6 +41,9 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(1, 2, -3)
 
+        with self.assertRaises(ValueError):
+            Square(0)
+
     def test_case_normal(self):
         """Test of Square(1, 2, 3, 4) exists"""
         s = Square(1, 2, 3, 4)

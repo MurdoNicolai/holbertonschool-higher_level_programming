@@ -1,9 +1,12 @@
+
 #!/usr/bin/python3
 "Unit tests for Rectangle class"
 import unittest
 from unittest import mock
 import io
 from models.rectangle import Rectangle
+import json
+import os
 
 
 class TestRectangle(unittest.TestCase):
@@ -71,6 +74,13 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
 
+    def test_dictionary(self):
+        "Tests to_dictionary() method"
+        s1 = Rectangle(10, 2, 1, 9)
+        s1_dict = s1.to_dictionary()
+        self.assertEqual(s1_dict, {'x': 1, 'y': 9, 'id': 9,
+                                   'height': 2, 'width': 10})
+
     def test_update(self):
         "Tests if Rectangle's update() exists and updates the right args"
         r = Rectangle(10, 20, 30, 40, 50)
@@ -81,39 +91,51 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 4)
 
-
     def test_create(self):
         """tests create"""
-        to_test = Rectangle.create(**{ 'id': 89, 'width': 1,
-                                       'height': 2, 'x': 3 })
+        to_test = Rectangle.create(**{'id': 89, 'width': 1,
+                                      'height': 2, 'x': 3})
         answer = Rectangle(1, 2, 3, 0, 89)
         self.assertEqual(str(to_test), str(answer))
 
-        to_test = Rectangle.create(**{ 'id': 89, 'width': 1,
-                                       'height': 2, 'x': 3, 'y': 4 })
+        to_test = Rectangle.create(**{'id': 89, 'width': 1,
+                                      'height': 2, 'x': 3, 'y': 4})
         answer = Rectangle(1, 2, 3, 4, 89)
         self.assertEqual(str(to_test), str(answer))
 
-        to_test = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        to_test = Rectangle.create(
+            **{'id': 89, 'width': 1, 'height': 2, 'x': 3})
         answer = Rectangle(1, 2, 3, 0, 89)
         self.assertEqual(str(to_test), str(answer))
 
-        to_test = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
+        to_test = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
         answer = Rectangle(1, 2, 0, 0, 89)
         self.assertEqual(str(to_test), str(answer))
 
-        to_test = Rectangle.create(**{ 'id': 89, 'width': 1 })
+        to_test = Rectangle.create(**{'id': 89, 'width': 1})
         self.assertEqual(to_test.id, 89)
         self.assertEqual(to_test.width, 1)
         self.assertEqual(to_test.x, 0)
         self.assertEqual(to_test.y, 0)
 
-        to_test = Rectangle.create(**{ 'id': 89 })
+        to_test = Rectangle.create(**{'id': 89})
         self.assertEqual(to_test.id, 89)
         self.assertEqual(to_test.x, 0)
         self.assertEqual(to_test.y, 0)
 
+    def test_save_to_file_None(self):
+        """Test of Rectangle.save_to_file(None) in Rectangle exists"""
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", 'r') as file:
+            self.assertEqual(json.loads(file.read()), json.loads('[]'))
+        os.remove("Rectangle.json")
+
+    def test_save_empty_list(self):
+        """test  empty list"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as fileempty:
+            self.assertEqual("[]", fileempty.read())
+
 
 if __name__ == "__main__":
     unittest.main()
-

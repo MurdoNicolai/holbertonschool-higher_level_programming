@@ -1,4 +1,4 @@
-/* creates the cities table in hbtn_0d_usa*/
+-- creates the cities table in hbtn_0d_usa
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 
 /*

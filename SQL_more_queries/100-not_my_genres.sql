@@ -10,3 +10,4 @@ SELECT g2.name
 		) AS dexterTable
 	ON g2.name = dexterTable.name
 	WHERE title IS NULL
+	ORDER BY g.name

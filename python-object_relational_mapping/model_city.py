@@ -7,6 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
+
 class City(Base):
     """
     Contains class definition of table states:
@@ -21,6 +22,7 @@ class City(Base):
     name = Column(String(128))
 
     state = relationship("State", back_populates="cities")
+
 
 State.cities = relationship(
     "City", order_by=City.id, back_populates="state")

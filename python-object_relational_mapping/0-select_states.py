@@ -4,14 +4,17 @@ import sys
 import MySQLdb
 
 
-"""lists all states from the database hbtn_0e_0_usa.
+"""
+lists all states from the database hbtn_0e_0_usa.
 arguments:
     mysql username (string)
     mysql password (string)
     database name (string)
 """
+
 def main():
-    
+    """ Does the entire script when not imported"""
+
     #get information needed
     Username = sys.argv[1]
     Password = sys.argv[2]

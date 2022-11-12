@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-
-import sys
-import MySQLdb
-
-
 """
 lists all states from the database hbtn_0e_0_usa.
 arguments:
@@ -11,6 +6,11 @@ arguments:
     mysql password (string)
     database name (string)
 """
+
+
+import sys
+import MySQLdb
+
 
 def main():
     """ Does the entire script when not imported"""

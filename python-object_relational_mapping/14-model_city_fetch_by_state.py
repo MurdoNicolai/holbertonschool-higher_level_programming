@@ -41,7 +41,7 @@ def main():
         query = session.query(State)
         state = query.filter(State.id == city.state_id)[0]
         print(state.name, end="")
-        print(f": ({city.id}): {city.name}")
+        print(f": ({city.id}) {city.name}")
 
 
 if __name__ == '__main__':

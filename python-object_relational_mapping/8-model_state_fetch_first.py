@@ -35,10 +35,10 @@ def main():
     """ use Session """
     session = Session(bind=engine)
 
-    """print states"""
-    for state in session.query(State).order_by(State.id):
-        print(f"{state.id}: {state.name}")
-        break
+    """use query to do stuff involving selecting specific states"""
+    query = session.query(State).order_by(State.id)
+    state = query.first()
+    print(f"{state.id}: {state.name}")
 
 
 if __name__ == '__main__':

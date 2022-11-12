@@ -38,11 +38,10 @@ def main():
     """use query to do stuff involving selecting specific states"""
     query = session.query(State).order_by(State.id)
     state = query.first()
-    if state == None:
+    if state is None:
         print("Nothing")
     else:
         print(f"{state.id}: {state.name}")
-
 
 
 if __name__ == '__main__':

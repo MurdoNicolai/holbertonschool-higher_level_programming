@@ -6,6 +6,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 
+"""create a Base class so that our class can have it's attributes"""
 Base = declarative_base()
 
 

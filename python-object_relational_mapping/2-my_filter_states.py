@@ -33,7 +33,7 @@ def main():
     cursor.execute("SELECT * FROM states Order by id")
     states = cursor.fetchall()
     for state in states:
-        if state[1]== SearchedName:
+        if state[1] == SearchedName:
             print(f"({state[0]}, '{state[1]}')")
 
 

@@ -25,7 +25,6 @@ def main():
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-
     """create engine that will use our database"""
     engine = create_engine(
         f"mysql+mysqldb://{username}:{password}@localhost/{database}",
@@ -40,11 +39,12 @@ def main():
 
     """use query to do stuff involving selecting specific states"""
     query = session.query(State)
-    state = query.filter(State.name==state_name)[0]
-    if state is None:
-        print("Not found")
-    else:
+    try:
+        state = query.filter(State.name == state_name)[0]
         print(f"{state.id}")
+    except IndexError:
+        print("Not found")
+
 
 if __name__ == '__main__':
     main()

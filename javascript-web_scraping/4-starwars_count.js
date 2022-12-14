@@ -4,25 +4,23 @@ const request = require('request');
 
 let numberApearances = 0;
 
-function isInFilm (error, page) {
+function NumberInFilms (error, page) {
   if (error) {
     console.error('error:', error);
   }
   const JSONpage = JSON.stringify(page); // transform to JSON string
   const JSONbody = JSON.parse(JSONpage).body; // convert to dict and find body
-  const characters = JSON.parse(JSONbody).characters;
-  for (let i = 0; i < characters.length; i++) {
-    if (characters[i] === 'https://swapi-api.hbtn.io/api/people/18/') {
-      numberApearances += 1;
+  for (let idFilm = 0; idFilm < 7; idFilm++) {
+    const characters = JSON.parse(JSONbody).results[idFilm].characters;
+    for (let i = 0; i < characters.length; i++) {
+      if (characters[i] === 'https://swapi-api.hbtn.io/api/people/18/') {
+        numberApearances += 1;
+      }
     }
   }
 }
 
-let filmID = 1;
-while (filmID < 8) {
-  const webpage = process.argv[2] + '/' + filmID + '/';
-  request(webpage, isInFilm);
-  filmID++;
-}
+const webpage = process.argv[2];
+request(webpage, NumberInFilms);
 
 setTimeout(() => console.log(numberApearances), 500);

@@ -9,7 +9,7 @@ function printCharacterInFilm (error, page) {
   const JSONpage = JSON.stringify(page); // transform to JSON string
   const JSONbody = JSON.parse(JSONpage).body; // convert to dict and find body
   // find caracters of film given as input, convert to list
-  const characters = JSON.parse(JSONbody).results[process.argv[2]].characters;
+  const characters = JSON.parse(JSONbody).results[process.argv[2] - 1].characters;
   for (let characterLink = 0; characterLink < characters.length; characterLink++) {
     request(characters[characterLink], getname); // print character name using link
   }

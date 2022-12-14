@@ -10,10 +10,11 @@ function NumberInFilms (error, page) {
   }
   const JSONpage = JSON.stringify(page); // transform to JSON string
   const JSONbody = JSON.parse(JSONpage).body; // convert to dict and find body
-  for (let idFilm = 0; idFilm < 7; idFilm++) {
+  // const JSONbody = page;
+  for (let idFilm = 0; idFilm < JSON.parse(JSONbody).results.length; idFilm++) {
     const characters = JSON.parse(JSONbody).results[idFilm].characters;
     for (let i = 0; i < characters.length; i++) {
-      if (characters[i] === 'https://swapi-api.hbtn.io/api/people/18/') {
+      if (characters[i].endsWith('/18/')) {
         numberApearances += 1;
       }
     }
@@ -23,4 +24,12 @@ function NumberInFilms (error, page) {
 const webpage = process.argv[2];
 request(webpage, NumberInFilms);
 
-setTimeout(() => console.log(numberApearances), 5000);
+// setTimeout(() => console.log(numberApearances), 1000);
+
+// const filesystem = require('fs');
+
+// const filename = process.argv[2];
+
+// filesystem.readFile(filename, 'utf-8', NumberInFilms);
+
+setTimeout(() => console.log(numberApearances), 1000);

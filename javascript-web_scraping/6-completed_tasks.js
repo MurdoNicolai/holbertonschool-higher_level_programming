@@ -11,7 +11,7 @@ function NumbercompletedTasks (error, page) {
   const JSONpage = JSON.stringify(page); // transform to JSON string
   const JSONbody = JSON.parse(JSON.parse(JSONpage).body); // convert to dict and find body
   for (let i = 0; i < JSONbody.length; i++) { // go through body to find users
-    if (isNaN(usersTasksCompleted[JSONbody[i].userId])) {
+    if (isNaN(usersTasksCompleted[JSONbody[i].userId]) && JSONbody[i].completed) {
       usersTasksCompleted[JSONbody[i].userId] = 1;
     } else if (JSONbody[i].completed) {
       usersTasksCompleted[JSONbody[i].userId] += 1;

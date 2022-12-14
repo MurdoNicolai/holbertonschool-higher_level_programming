@@ -24,5 +24,6 @@ function getname (error, page) {
   const JSONbody = JSON.parse(JSONpage).body; // convert to dict and find body
   console.log(JSON.parse(JSONbody).name);
 }
+
 const webpage = 'https://swapi-api.hbtn.io/api/films';
 request(webpage, printCharacterInFilm);

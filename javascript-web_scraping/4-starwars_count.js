@@ -23,4 +23,4 @@ function NumberInFilms (error, page) {
 const webpage = process.argv[2];
 request(webpage, NumberInFilms);
 
-setTimeout(() => console.log(numberApearances), 500);
+setTimeout(() => console.log(numberApearances), 5000);

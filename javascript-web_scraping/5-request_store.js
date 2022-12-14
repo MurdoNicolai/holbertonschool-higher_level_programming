@@ -13,7 +13,6 @@ function getBody (error, page) {
     console.error('error:', error);
   }
   const input = page.body;
-  console.log(input);
   filesystem.writeFile(fileName, input, writeFile);
 }
 

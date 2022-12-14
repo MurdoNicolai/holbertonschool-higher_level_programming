@@ -18,13 +18,10 @@ function isInFilm (error, page) {
   }
 }
 
-let filmpath = '';
-
 let filmID = 1;
 while (filmID < 8) {
   const webpage = process.argv[2] + '/' + filmID + '/';
-  filmpath = request(webpage, isInFilm).path;
-  console.log(filmpath, numberApearances);
+  request(webpage, isInFilm);
   filmID++;
 }
 
